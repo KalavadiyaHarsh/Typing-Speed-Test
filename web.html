@@ -1,0 +1,144 @@
+<html lang="en">
+<head>
+ <title>Simple Speed Typer</title>
+
+ <!-- link the CSS file here -->
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <style>
+        body {
+background-color: #01aafe;
+color: black;
+text-align: center;
+}
+
+.container {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.heading {
+margin-bottom: 20px;
+font-size: 3rem;
+color: black;
+}
+
+.header {
+display: flex;
+align-items: center;
+}
+
+.timer, .errors, .accuracy,
+.cpm, .wpm {
+background-color: #61da46;
+height: 60px;
+width: 70px;
+margin: 8px;
+padding: 12px;
+border-radius: 20%;
+box-shadow: black 5px 8px 5px;
+}
+
+.cpm, .wpm {
+display: none;
+}
+
+.header_text {
+text-transform: uppercase;
+font-size: 0.6rem;
+font-weight: 600;
+}
+
+.curr_time, .curr_errors,
+.curr_accuracy, .curr_cpm,
+.curr_wpm {
+font-size: 2.75rem;
+}
+
+.quote {
+background-color: #da7546;
+font-size: 1.5rem;
+margin: 10px;
+padding: 25px;
+box-shadow: black 5px 8px 5px;
+}
+
+.input_area {
+background-color: #f5f5c6;
+height: 80px;
+width: 40%;
+font-size: 1.5rem;
+font-weight: 600;
+margin: 15px;
+padding: 20px;
+border: 0px;
+box-shadow: black 5px 8px 5px;
+}
+
+.restart_btn {
+display: none;
+background-color: #326765;
+font-size: 1.5rem;
+padding: 10px;
+border: 0px;
+box-shadow: black 5px 8px 5px;
+}
+
+.incorrect_char {
+color: rgb(217, 255, 0);
+text-decoration: underline;
+}
+
+.correct_char {
+color: rgb(45, 0, 100);
+}
+
+    </style>
+<div class="container">
+ <div class="heading">
+ Simple Speed Typing
+ </div>
+ <div class="header">
+ <div class="wpm">
+  <div class="header_text">WPM</div>
+  <div class="curr_wpm">100</div>
+ </div>
+ <div class="cpm">
+  <div class="header_text">CPM</div>
+  <div class="curr_cpm">100</div>
+ </div>
+ <div class="errors">
+  <div class="header_text">Errors</div>
+  <div class="curr_errors">0</div>
+ </div>
+ <div class="timer">
+  <div class="header_text">Time</div>
+  <div class="curr_time">60s</div>
+ </div>
+ <div class="accuracy">
+  <div class="header_text">% Accuracy</div>
+  <div class="curr_accuracy">100</div>
+ </div>
+ </div>
+
+ <div class="quote">
+ Click on the area below to start the game.
+ </div>
+ <textarea class="input_area"
+ placeholder="start typing here..."
+ oninput="processCurrentText()"
+ onfocus="startGame()">
+ </textarea>
+ <button class="restart_btn"
+ onclick="resetValues()">
+ Restart
+ </button>
+</div>
+
+<!-- link the JavaScript file here -->
+<script src="game.js">
+</script>
+</body>
+</html>
